@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  dynamicHTML: string = '';
+  dynamicHTML: string = 'this is a merge example';
 
   ngOnInit() {
     this.buildHTML();
@@ -16,9 +16,9 @@ export class AppComponent implements OnInit {
     const isEmployee = true;
 
     if (isEmployee) {
-      this.dynamicHTML = '<h1>You are an employee!</h1>'
+      this.dynamicHTML = '<h1>You are an employee!</h1>';
     } else {
-      this.dynamicHTML = '<h1>You are not employed here...</h1>'
+      this.dynamicHTML = '<h1>You are not employed here...</h1>';
     }
   }
 }
