@@ -6,7 +6,7 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  dynamicHTML: string = 'this is a merge example';
+  dynamicHTML: string = 'this will conflict';
 
   ngOnInit() {
     this.buildHTML();
