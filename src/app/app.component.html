@@ -6,3 +6,12 @@
 
 <div [innerHTML]="dynamicHTML"></div>
 
+
+
+<div *ngIf="isEmployee">"You are an employee"</div>
+<div *ngIf="!isEmployee">"You are not an employee"</div>
+
+
+<p [class]="isRed ? 'red-text' : 'blue-text'"></p>
+<nav [style.background-color]="isRed ? 'red' : 'blue'"></nav>
+
