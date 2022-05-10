@@ -4,10 +4,12 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { FlexboxDemoComponent } from './components/flexbox-demo/flexbox-demo.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    FlexboxDemoComponent
   ],
   imports: [
     BrowserModule,

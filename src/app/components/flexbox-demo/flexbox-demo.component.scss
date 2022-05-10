@@ -1,0 +1,22 @@
+.section {
+    display: flex;
+    column-gap: 100px;
+    flex-flow: row wrap;
+    border: 5px solid purple;
+}
+
+.container {
+    border: 5px solid black;
+    flex-grow: 1;
+    min-width: 150px;
+    row-gap: 20px;
+    display: flex;
+    flex-flow: column wrap;
+    justify-content: center;
+}
+
+.flex-item {
+    flex-grow: 1;
+    align-self: center;
+}
+

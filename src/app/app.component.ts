@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { filter, map, take, tap } from 'rxjs';
 import { DemoServiceService } from './services/demo-service.service';
 
 @Component({
@@ -13,6 +14,22 @@ export class AppComponent implements OnInit {
 
   ngOnInit() {
     this.dataArr = this.demoService.getListOfPeople();
+
+
+    this.demoService.retrieveListOfPeople().pipe(
+
+      map((res: any) => {
+        const newRes = res[0];
+        return newRes;
+      })
+
+
+    ).subscribe(res => {
+      console.log(res);
+    })
+
+
+
   }
 }
 
