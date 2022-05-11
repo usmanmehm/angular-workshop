@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { filter, map, take, tap } from 'rxjs';
-import { DemoServiceService } from './services/demo-service.service';
+import { WeatherForecast, WeatherResponse } from './models/weather.interface';
+import { DemoService } from './services/demo.service';
 
 @Component({
   selector: 'app-root',
@@ -8,29 +9,78 @@ import { DemoServiceService } from './services/demo-service.service';
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent implements OnInit {
-  dataArr: any = [];
+  todaysData: WeatherForecast | undefined;
+  constructor(private demoService: DemoService) {}
 
-  constructor(private demoService: DemoServiceService) {}
-
-  ngOnInit() {
-    this.dataArr = this.demoService.getListOfPeople();
-
-
-    this.demoService.retrieveListOfPeople().pipe(
-
-      map((res: any) => {
-        const newRes = res[0];
-        return newRes;
+  ngOnInit(): void {
+    this.demoService.getWeather().pipe(
+      map((res: WeatherResponse) => {
+        return res.weather.tuesday;
       })
-
-
-    ).subscribe(res => {
-      console.log(res);
-    })
-
-
-
+    ).subscribe((response: WeatherForecast) => {
+      this.todaysData = response;
+      console.log(this.todaysData);
+      
+    });
   }
 }
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// dataArr: any = [];
+
+//   constructor(private demoService: DemoServiceService) {}
+
+//   ngOnInit() {
+//     this.dataArr = this.demoService.getListOfPeople();
+
+
+//     this.demoService.retrieveListOfPeople().pipe(
+
+//       map((res: any) => {
+//         const newRes = res[0];
+//         return newRes;
+//       })
+
+
+//     ).subscribe(res => {
+//       console.log(res);
+//     })
+
+
+//   }

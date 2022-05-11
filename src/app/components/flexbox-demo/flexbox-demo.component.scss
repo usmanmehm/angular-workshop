@@ -1,6 +1,6 @@
 .section {
     display: flex;
-    column-gap: 100px;
+    column-gap: 20px;
     flex-flow: row wrap;
     border: 5px solid purple;
 }
@@ -9,14 +9,14 @@
     border: 5px solid black;
     flex-grow: 1;
     min-width: 150px;
-    row-gap: 20px;
+    row-gap: 10px;
     display: flex;
     flex-flow: column wrap;
     justify-content: center;
 }
 
 .flex-item {
-    flex-grow: 1;
+//     flex-grow: 1;
     align-self: center;
 }
 
